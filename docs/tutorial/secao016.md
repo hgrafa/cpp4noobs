@@ -67,10 +67,10 @@ int main()
 
 Para a 1ª implementação, temos 2 operações feitas para atribuir os casos base do array e depois temos um for que faz n-1 operações, indo de 2 até n(inclusive). 
 
-Para
+Para a 2ª implementação, temos a chamada de 2 operações para cada operação que não é um caso base. Deste modo, o número de operações sempre se multiplica por 2, tendo como número total de operações feitas 2^n.
 
 > Conseguiu notar que o número de operações é uma função de n?
 
 Se sim, agora você deu o primeiro passo para entender a **Big O Notation**.
 
-> Consegue notar a diferença dessas implementações?
+
