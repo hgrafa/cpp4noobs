@@ -65,9 +65,9 @@ int main()
 }
 ```
 
-Para a 1ª implementação, temos 2 operações feitas para atribuir os casos base do array e depois temos um for que faz n-1 operações, indo de 2 até n(inclusive). 
+Para a 1ª implementação, temos `2` operações feitas para atribuir os casos base do array e depois temos um for que faz `n-1` operações, indo de `2` até `n`(inclusive). 
 
-Para a 2ª implementação, temos a chamada de 2 operações para cada operação que não é um caso base. Deste modo, o número de operações sempre se multiplica por 2, tendo como número total de operações feitas 2^n.
+Para a 2ª implementação, temos a chamada de 2 operações para cada operação que não é um caso base. Deste modo, o número de operações sempre se multiplica por 2, tendo como número total de operações feitas `2^n`.
 
 > Conseguiu notar que o número de operações é uma função de n?
 
@@ -78,14 +78,14 @@ Se sim, agora você deu o primeiro passo para entender a **Big O Notation**.
 
 A Big O Notation é um conjunto a qual funções matemáticas podem pertencer, exatamente como uma família de funções que definidas por uma restrição.
 
-Seja a função fib1(n) = n, a função que conta o total de operações realizadas pela primeira implementação. Esta função é uma função **linear**,
+Seja a função `fib1(n) = n`, a função que conta o total de operações realizadas pela primeira implementação. Esta função é uma função **linear**,
 por isto dizemos que a complexidade deste algoritmo é **linear**.
 
 Em termos de notação:
 
-> fib1(n) = n 
+> `fib1(n) = n` 
 
-> fib1(n) pertence a **O(n)**
+> `fib1(n)` pertence a `O(n)`
 
 A expressão O(n) indica que a função do número de operações é dada por uma [função linear](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_afim).
 
@@ -123,23 +123,23 @@ int main()
 
 O trecho em destaque adicionado pertence a O(1), isto é o que chamamos de tempo constante para a *Big O*, as atribuições, os `cout`'s e `if`'s mais simples pertencem a ordem constante de complexidade.
 
-Entretanto, nossa fib1(n) passa a ter n+1 operações.
+Entretanto, nossa `fib1(n)` passa a ter n+1 operações.
 
 > Dado tudo que já foi estudado, sua compexidade linear O(n) mudaria?
 
 A resposta é **NÃO**! A *Big O Notation*, como comentei, indica um **conjunto** a qual uma *família de funções* pertence.
 
-> fib1(n) = n+1
+> `fib1(n) = n+1`
 
-> fib1(n) pertence a O(n)
+> `fib1(n)` pertence a `O(n)`
 
 Em termos práticos, quem efetivamente é capaz de piorar a execução do nosso programa, é a entrada `n`.
 
-Seja a função fib2(n) = 2^n, a função que conta o número de operações realizadas pela segunda implementação. Esta é uma função **exponencial**, por isto dizemos que a complexidade deste algoritmo é **exponencial.**
+Seja a função `fib2(n) = 2^n`, a função que conta o número de operações realizadas pela segunda implementação. Esta é uma função **exponencial**, por isto dizemos que a complexidade deste algoritmo é **exponencial.**
 
-> fib2(n) = 2^n
+> `fib2(n) = 2^n`
 
-> fib2(n) pertence a O(2^n)
+> `fib2(n)` pertence a`O(2^n)`
 
 ## Aplicando os resultados obtidos
 
@@ -150,10 +150,10 @@ Seja a função fib2(n) = 2^n, a função que conta o número de operações rea
 
 Através deste exemplo percebemos que **o algoritmo da 1ª implementação performa melhor**, pois o número de operações feitas cresce mais devagar. 
 
-Além disso, é mais fácil fazer esta análise quando estamos olhando para a *Big O*, pois é matemáticamente mais simples de comparar qual função é *superior a longo prazo*, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de 10^5:
+Além disso, é mais fácil fazer esta análise quando estamos olhando para a *Big O*, pois é matemáticamente mais simples de comparar qual função é *superior a longo prazo*, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de `10^5` :
 
-> fib1(10^5) = 10^5 = 100,000 
+> `fib1(10^5) = 10^5 = 100,000 `
 
-> fib2(10^5) = 2^(10^5) = possui 30,103 dígitos !!!
+> `fib2(10^5) = 2^(10^5)` = possui 30,103 dígitos !!!
 
-No próximo módulo veremos mais sobre o funcionamento da *Big O* e exemplos de outras complexidades de algoritmos.
+No próximo módulo veremos mais sobre aplicações da *Big O* e exemplos de outras complexidades de algoritmos.
