@@ -143,7 +143,17 @@ Seja a função fib2(n) = 2^n, a função que conta o número de operações rea
 
 ## Aplicando os resultados obtidos
 
-| Gráfico `n` **x** `fib(n)`| 
+| Gráfico `n` **x** ` fib(n)` | 
 | :-----------: |
 | ![linear versus exponencial](../.vuepress/assets/complexidade_pt1.png)   | 
 | *E agora, ficou mais fácil perceber qual algoritmo performa melhor?* |
+
+Através deste exemplo percebemos que **o algoritmo da 1ª implementação performa melhor**, pois o número de operações feitas cresce mais devagar. 
+
+Além disso, é mais fácil fazer esta análise quando estamos olhando para a *Big O*, pois é matemáticamente mais simples de comparar qual função é *superior a longo prazo*, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de 10^5:
+
+> fib1(10^5) = 10^5 = 100,000 
+
+> fib2(10^5) = 2^(10^5) = possui 30,103 dígitos !!!
+
+No próximo módulo veremos mais sobre o funcionamento da *Big O* e exemplos de outras complexidades de algoritmos.
