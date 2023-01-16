@@ -5,103 +5,63 @@ Recursão é um conceito não exclusivo do C++, onde uma função chama a si mes
 Tudo que pode ser resolvido por loops, pode ser resolvido por recursão.
 Tudo que pode ser resolvido por recursão, pode ser resolvido por loops.
 
-Por que usar recursão? Legibilidade.
+> Por que usar recursão?
 
-Algumas soluções são mais fáceis de serem expressadas por recursão.
-Assim como outras são mais fáceis através de loops.
+**Legibilidade.** Algumas coisas parecem ter *nascido* para uma interpretação recursiva!
 
-# Exemplos
+## Conceitos iniciais
+
+- **Caso base:** Todas chamadas realizadas nas funções recursivas precisam parar em algum momento, senão teríamos um programa rodando infinitamente. Por isso, criamos casos base.
+
+- **Função recursiva:**
+
+> Muitos problemas tem como seus casos base como casos pequenos e simples de serem feitos a mão, e deixamos a resposabilidade de casos maiores para a função recursiva recursão precisa parar em algum momento para que o problema funcione.
+
+## Situação problema 1: [Fatorial](https://pt.wikipedia.org/wiki/Fatorial)
+
+Faça um programa capaz de retornar (recursivamente), dado um inteiro `number`, o valor da operação fatorial de `number`.
+
+## Interpretando e resolvendo
+
+A operação
+
+![fatorial](../.vuepress/assets/recursao_fatorial.gif)
+
+## Código da situação problema
 
 ```cpp{0}
+// he4rt developers - Hugo Rafael
+
 #include <iostream>
 
 int factorial(int number)
 {
-  /**
-    * Toda função recursiva precisa de uma condição de parada,
-    * caso contrário entrará em um loop infinito
-    * Nesse caso, a função retorna quando encontrar
-    * essa condição de parada
-    * No caso da função fatorial, existem duas condições de parada:
-    * quando number == 0 ou quanto number == 1, pois:
-    * 0! = 1
-    * 1! = 1
-  */
-  if (number <= 1)
-  {
-    return 1;
-  }
+  // verificamos se é um caso base
+  // se for, retornamos a respostanda conhecida
+  if (number == 0) return 1;
 
-  /**
-    * Se o número não for <= 1, chamamos a função factorial novamente,
-    * passando o número - 1 como parâmetro
-    * Repetimos esse processo até que a condição de parada seja alcançada
-  */
+  // caso não seja conhecido,
+  // deixamos a responsabilidade para a função recursiva
   return number * factorial(number - 1);
-}
-
-/**
-  * Usando operador ternário
-*/
-int factorial(int number)
-{
-  return number <= 1 ? 1 : number * factorial(number - 1);
-}
-
-int fibonacci(int number)
-{
-  /**
-    * Condição de parada
-  */
-  if (number <= 2)
-  {
-    return number;
-  }
-
-  return fibonacci(number - 2) + fibonacci(number - 1);
-}
-
-/**
-  * Usando operador ternário
-*/
-int fibonacci(int number)
-{
-  return number <= 2 ? number : fibonacci(number - 2) + fibonacci(number - 1);
 }
 
 int main ()
 {
-    /*|--------------------------------------|
-     *|                                      |
-     *|           He4rt Developers           |
-     *|                                      |
-     *|--------------------------------------|
-     */
 
-    /**
-      * Calcular fatorial de um número é um exemplo clássico de recursão
-    */
-    std::cout << factorial(5); // 120
+    int n; // declarando input
+    std::cin >> n; // entrando com o input
 
-    /**
-      * Calcular o nth termo da sequência de fibonacci é outro exemplo clássico
-    */
-
-    std::cout << fibonacci(10); // 55 começando do 0
-
-    /**
-      * Visualização de como uma função recursiva funciona.
-      * int result = factorial(5)
-      *                  5 * factorial(4)
-      *                    4 * factorial(3)
-      *                      3 * factorial(2)
-      *                        2 * factorial(1)
-      *                        2
-      *                      6
-      *                    24
-      *                  120
-
-      * std::cout << result; // 120
-    */
+    // retornando o fatorial
+    std::cout << factorial(n) << std::endl;  
 }
 ```
+
+| `input` | `output` | status |
+| :-----: | :------: | :------: |
+| `1` | `1` | ok! |
+| `3` | `6` | ok! |
+| `5` | `120` | ok! |
+
+**nota:** quando temos apenas um comando no `if`, a sintaxe utilizada na função `fatorial` também é aceita no C++.
+
+## Situação problema 2: [Fibonacci](https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci)

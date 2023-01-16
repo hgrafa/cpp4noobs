@@ -10,7 +10,7 @@ Vamos estudar particularmente a [**sequência de fibonacci**](https://pt.wikiped
 
 Ex.: {0 , 1 , 1 , 2 , 3 , 5 , 8, ... }
 
-1ª implementação - ***botton up***: definimos os casos base e iremos escalando até chegarmos no resultado desejado.
+1ª implementação - ***bottom up***: definimos os casos base e iremos escalando até chegarmos no resultado desejado.
 
 ```cpp{0}
 // @he4rt developers - Hugo Rafael
@@ -65,7 +65,7 @@ int main()
 }
 ```
 
-Para a 1ª implementação, temos `2` operações feitas para atribuir os casos base do array e depois temos um for que faz `n-1` operações, indo de `2` até `n`(inclusive). 
+Para a 1ª implementação, temos `2` operações feitas para atribuir os casos base do array e depois temos um for que faz `n-1` operações, indo de `2` até `n`(inclusive).
 
 Para a 2ª implementação, temos a chamada de 2 operações para cada operação que não é um caso base. Deste modo, o número de operações sempre se multiplica por 2, tendo como número total de operações feitas `2^n`.
 
@@ -75,7 +75,6 @@ Se sim, agora você deu o primeiro passo para entender a **Big O Notation**.
 
 ## Segundo passo: Análise assintótica / Big O Notation
 
-
 A Big O Notation é um conjunto a qual funções matemáticas podem pertencer, exatamente como uma família de funções que definidas por uma restrição.
 
 Seja a função `fib1(n) = n`, a função que conta o total de operações realizadas pela primeira implementação. Esta função é uma função **linear**,
@@ -83,7 +82,7 @@ por isto dizemos que a complexidade deste algoritmo é **linear**.
 
 Em termos de notação:
 
-> `fib1(n) = n` 
+> `fib1(n) = n`
 
 > `fib1(n)` pertence a `O(n)`
 
@@ -152,7 +151,7 @@ Através deste exemplo percebemos que **o algoritmo da 1ª implementação perfo
 
 Além disso, é mais fácil fazer esta análise quando estamos olhando para a *Big O*, pois é matemáticamente mais simples de comparar qual função é *superior a longo prazo*, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de `10^5` :
 
-> `fib1(10^5) = 10^5 = 100,000 `
+> `fib1(10^5) = 10^5 = 100,000`
 
 > `fib2(10^5) = 2^(10^5)` = possui 30,103 dígitos !!!
 
