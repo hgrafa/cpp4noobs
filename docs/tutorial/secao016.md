@@ -1,6 +1,6 @@
 # 16 - Introdução à Complexidade (Big O Notation)
 
-Analisar a complexidade de um algoritmo é uma tarefa importante para entender as limitações associadas ao código. Podemos encontrar mais desse tema através dos nomes *análise assintótica* ou *Big O Notation*.
+Analisar a complexidade de um algoritmo é uma tarefa importante para entender as limitações associadas ao código. Podemos encontrar mais desse tema através dos nomes _análise assintótica_ ou _Big O Notation_.
 
 Não conseguimos fazer uma analise precisa do tempo, pois depende de fatores particulares da entrada. Entretanto, conseguimos medir a complexidade **em função dos parâmetros da entrada.**
 
@@ -10,9 +10,9 @@ Vamos estudar particularmente a [**sequência de fibonacci**](https://pt.wikiped
 
 Ex.: {0 , 1 , 1 , 2 , 3 , 5 , 8, ... }
 
-1ª implementação - ***bottom up***: definimos os casos base e iremos escalando até chegarmos no resultado desejado.
+1ª implementação - **_bottom up_**: definimos os casos base e iremos escalando até chegarmos no resultado desejado.
 
-```cpp{0}
+```cpp
 // @he4rt developers - Hugo Rafael
 
 #include <iostream>
@@ -38,9 +38,9 @@ int main()
 }
 ```
 
-2ª implementação - ***top down:*** Utilizando funções recursivas até chegar nos casos base.
+2ª implementação - **_top down:_** Utilizando funções recursivas até chegar nos casos base.
 
-```cpp{0}
+```cpp
 // @he4rt developers - Hugo Rafael
 
 #include <iostream>
@@ -88,9 +88,9 @@ Em termos de notação:
 
 A expressão O(n) indica que a função do número de operações é dada por uma [função linear](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_afim).
 
-Uma particularidade da *Big O* é a capacidade de interpretar quem *realmente* faz diferença nos piores casos do programa. Se o código do programa 1 fosse atualizado para:
+Uma particularidade da _Big O_ é a capacidade de interpretar quem _realmente_ faz diferença nos piores casos do programa. Se o código do programa 1 fosse atualizado para:
 
-```cpp{9-13}
+```cpp
 #include <iostream>
 
 int main()
@@ -120,13 +120,13 @@ int main()
 }
 ```
 
-O trecho em destaque adicionado pertence a O(1), isto é o que chamamos de tempo constante para a *Big O*, as atribuições, os `cout`'s e `if`'s mais simples pertencem a ordem constante de complexidade.
+O trecho em destaque adicionado pertence a O(1), isto é o que chamamos de tempo constante para a _Big O_, as atribuições, os `cout`'s e `if`'s mais simples pertencem a ordem constante de complexidade.
 
 Entretanto, nossa `fib1(n)` passa a ter n+1 operações.
 
 > Dado tudo que já foi estudado, sua compexidade linear O(n) mudaria?
 
-A resposta é **NÃO**! A *Big O Notation*, como comentei, indica um **conjunto** a qual uma *família de funções* pertence.
+A resposta é **NÃO**! A _Big O Notation_, como comentei, indica um **conjunto** a qual uma _família de funções_ pertence.
 
 > `fib1(n) = n+1`
 
@@ -142,17 +142,17 @@ Seja a função `fib2(n) = 2^n`, a função que conta o número de operações r
 
 ## Aplicando os resultados obtidos
 
-| Gráfico `n` **x** ` fib(n)` | 
-| :-----------: |
-| ![linear versus exponencial](../.vuepress/assets/complexidade_pt1.png)   | 
-| *E agora, ficou mais fácil perceber qual algoritmo performa melhor?* |
+|                       Gráfico `n` **x** `fib(n)`                       |
+| :--------------------------------------------------------------------: |
+| ![linear versus exponencial](../.vuepress/assets/complexidade_pt1.png) |
+|  _E agora, ficou mais fácil perceber qual algoritmo performa melhor?_  |
 
-Através deste exemplo percebemos que **o algoritmo da 1ª implementação performa melhor**, pois o número de operações feitas cresce mais devagar. 
+Através deste exemplo percebemos que **o algoritmo da 1ª implementação performa melhor**, pois o número de operações feitas cresce mais devagar.
 
-Além disso, é mais fácil fazer esta análise quando estamos olhando para a *Big O*, pois é matemáticamente mais simples de comparar qual função é *superior a longo prazo*, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de `10^5` :
+Além disso, é mais fácil fazer esta análise quando estamos olhando para a _Big O_, pois é matemáticamente mais simples de comparar qual função é _superior a longo prazo_, isto é, **nos piores casos da entrada**.Para entradas pequenas a diferença pode ser pouca, mas as vezes fazemos operações da ordem de `10^5` :
 
 > `fib1(10^5) = 10^5 = 100,000`
 
 > `fib2(10^5) = 2^(10^5)` = possui 30,103 dígitos !!!
 
-No próximo módulo veremos mais sobre aplicações da *Big O* e exemplos de outras complexidades de algoritmos.
+No próximo módulo veremos mais sobre aplicações da _Big O_ e exemplos de outras complexidades de algoritmos.
